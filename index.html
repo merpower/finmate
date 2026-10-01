@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finmate - Έξυπνη Διαχείριση Προσωπικών Οικονομικών</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #090D16 0%, #0F172A 50%, #050B14 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-emerald: #10B981;
+            --primary-glow: rgba(16, 185, 129, 0.25);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 28px;
+            padding: 48px 36px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px var(--primary-glow);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon-wrapper {
+            width: 84px;
+            height: 84px;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-radius: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .icon-wrapper svg {
+            width: 44px;
+            height: 44px;
+            fill: #FFFFFF;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #FFFFFF, #CBD5E1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 36px;
+            text-align: left;
+        }
+
+        @media (max-width: 520px) {
+            .features { grid-template-columns: 1fr; }
+            .container { padding: 32px 20px; }
+            h1 { font-size: 2rem; }
+        }
+
+        .feature-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 16px 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 0.95rem;
+            color: #E2E8F0;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #10B981;
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+
+        footer {
+            margin-top: 28px;
+            font-size: 0.8rem;
+            color: #64748B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-wrapper">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-2h2v2zm0-4h-2V7h2v5.5z"/>
+                <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+            </svg>
+        </div>
+
+        <h1>Finmate</h1>
+        <p class="tagline">Ο απόλυτος σύντροφος για την παρακολούθηση των εσόδων, των εξόδων και του Ασφαλούς Ποσού για Ξόδεμα (Safe to Spend).</p>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>🛡️ Safe to Spend</h3>
+                <p>Υπολογισμός πραγματικού διαθέσιμου υπολοίπου μετά από υποχρεώσεις.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔔 Υπενθυμίσεις</h3>
+                <p>Έγκαιρες τοπικές ειδοποιήσεις για πάγιες οφειλές & λογαριασμούς.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Βιομετρική Ασφάλεια</h3>
+                <p>Κλείδωμα με PIN & δακτυλικό αποτύπωμα για πλήρη προστασία.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Αναλυτικά Στοιχεία</h3>
+                <p>Οπτικοποιημένα γραφήματα & εξαγωγή δεδομένων σε CSV.</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="app-ads.txt" class="btn btn-outline">📄 app-ads.txt</a>
+            <a href="https://play.google.com/store/apps/details?id=com.merpower.financialmanager" class="btn btn-primary">📱 Google Play</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Merpower. Με την επιφύλαξη παντός δικαιώματος.
+    </footer>
+</body>
+</html>
